@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> The Issue - Housing Affordability</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="main-header">
+        <div class="header-content-wrapper">
+            <a href="index.html" class="site-logo">
+                <img src="https://raw.githubusercontent.com/19o19/rosmini-housing-affordability/refs/heads/main/Rosmini%20College%20Logo.png" alt="Rosmini College Logo" class="site-logo-icon">
+                Rosmini College
+                </a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="issue.html" class="nav-link">The Issue</a></li>
+                    <li><a href="evidence.html" class="nav-link">Evidence</a></li>
+                    <li><a href="role.html" class="nav-link">Our Role</a></li>
+                    <li><a href="getinvolved.html" class="nav-link">Get Involved</a></li>
+                </ul>
+    </nav>
+    </div>
+</header>
+
+<section id="get-involved" class="content-section white-bg">
+        <div class="container text-center">
+            <h2 class="section-heading">Get Involved: Contact Us</h2>
+            <p class="section-paragraph margin-top-paragraph" style="max-width: 800px; margin-left: auto; margin-right: auto; text-align: center;">
+                Have questions or want to share your thoughts? Fill out the form below, and we'll get back to you!
+            </p>
+
+            <div class="contact-form-container">
+                <h3 class="form-heading">Send Us a Message</h3>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name:</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Your Email:</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Your Message:</label>
+                        <textarea id="message" name="message" rows="5" class="form-textarea" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit-button">Send Message</button>
+                    <div id="formMessage" style="margin-top: 1rem; color: #3f51b5; font-weight: 600;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<footer class="main-footer">
+        <div class="container">
+            <p>2025 Rosmini College. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop the form from actually submitting
+
+            const formMessage = document.getElementById('formMessage');
+            formMessage.textContent = 'Message sent! Thank you for your interest.'; // Display success message
+            formMessage.style.color = '#22c55e'; // Green color for success
+
+            // Clear the form fields
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+
+            // Optional: Hide the message after a few seconds
+            setTimeout(() => {
+                formMessage.textContent = '';
+            }, 5000);
+        });
+    </script>
